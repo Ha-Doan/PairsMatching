@@ -6,9 +6,17 @@ class User < ApplicationRecord
 
 
 
- 
+
   before_create :set_default_role
   validates :role,    presence: true
+
+
+  #method to pair Users
+  def pairs
+    users = User.all
+    @combinations = users.combination(2)
+  end
+
 
   private
     def set_default_role
