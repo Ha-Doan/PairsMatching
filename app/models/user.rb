@@ -5,4 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  end
+
+ 
+  before_create :set_default_role
+  validates :role,    presence: true
+
+  private
+    def set_default_role
+        self.role ||=  self.update_attribute(:role,'student')
+    end
+
+end
