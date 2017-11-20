@@ -1,0 +1,7 @@
+<%if @user.role == "admin"  %>
+<h3>You are logged in as an admin. </h3>
+<%= render "admin" %>
+<% else %>
+<h3>You are logged in as a student. </h3>
+<%= render "student" %>
+<%end %>
