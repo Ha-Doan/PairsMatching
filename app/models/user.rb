@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  end
+
+
+  before_create :set_default_role
+  validates :role,    presence: true
+
+  private
+    def set_default_role
+        self.role ||=  self.update_attribute(:role,'student')
+    end
+
+end
