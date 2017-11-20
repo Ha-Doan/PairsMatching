@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
+
+ 
   before_create :set_default_role
   validates :role,    presence: true
 
