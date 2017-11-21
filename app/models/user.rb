@@ -11,7 +11,6 @@ class User < ApplicationRecord
     @users = User.all
   end
 
-  #method to pair Users
   def pairs
     user_array = []
     users = User.all
@@ -49,7 +48,7 @@ class User < ApplicationRecord
         return pair[0]
       end
     end
-  
+
   end
 
   def matched_pairs
