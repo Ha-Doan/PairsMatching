@@ -1,9 +1,15 @@
 <h3>Your match!</h3>
 <p>Date: <%=Date.today%><p>
+
 <% your_match = @user.find_match %>
-<p><%= date_select @match, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }} %></p>
 <p> You are <%= @user.email %>. You are  matched with <%= your_match %>.</p>
  <p> Matching pairs are: <br> </p>
  <% @user.matched_pairs.each do |pair| %>
 <p> <%= pair %><br></p>
  <%end%>
+
+
+
+   <%= label :date, "the match on this date" %>
+   <%= date_select :date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }} %>
+   <%= label :pairing, "diplay the paring for date x" %>
