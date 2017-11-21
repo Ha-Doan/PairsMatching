@@ -14,12 +14,18 @@ before_action :set_user, only: [:show, :update]
 
   def update
     if @user.update(user_params)
-      @user.update_attribute(:role, "admin")
+      if @user.role == "student"
+        @user.update_attribute(:role, "admin")
+      elsif @user.role == "admin"
+        @user.update_attribute(:role, "student")
+      end
       redirect_to user_path(@user.id), notice: "User updated"
     else
       render :edit
     end
   end
+
+
   private
   def user_params
     params.permit(:email, :role)

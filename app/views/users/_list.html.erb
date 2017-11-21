@@ -3,7 +3,7 @@
 <tr id="user_row">
   <td id="user_email"><%= user.email %></td>
   <td id="user_role"><%= user.role %></td>
-  <td id="switch_role"><%= link_to "Make Admin", user_path(user.id), :method => :put, data: {confirm: "Are you sure?"} %></td>
+  <td id="switch_role"><%= link_to "make admin or student", user_path(user.id), :method => :put, data: {confirm: "Are you sure?"} %></td>
 </tr>
 <% end %>
 <%end%>
