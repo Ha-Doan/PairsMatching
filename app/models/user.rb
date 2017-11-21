@@ -19,13 +19,7 @@ class User < ApplicationRecord
     @combinations = users.combination(2)
   end
 
-  def switchrole
-    if @user.role == "student"
-      @user.update_attribute(:role,'admin')
-    else
-      @user.update_attribute(:role,'student')
-    end
-  end
+
 
   private
     def set_default_role
