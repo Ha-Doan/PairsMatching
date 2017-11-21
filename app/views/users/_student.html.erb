@@ -2,7 +2,5 @@
 <p>Date: <%=Date.today%><p>
 <% your_match = @user.find_match %>
 <p> You are <%= @user.email %>. You are  matched with <%= your_match %>.</p>
- <p> Matching pairs are: <br> </p>
- <% @user.matched_pairs.each do |pair| %>
-<p> <%= pair %><br></p>
- <%end%>
+ <p> My match for today : <br> </p>
+ <p>Pair: <%= @user.my_match_a_day %> </p>
