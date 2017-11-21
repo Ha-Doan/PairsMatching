@@ -1,0 +1,8 @@
+<% form_for @user do |f| %>
+<% @users.each do |user| %>
+<tr id="user_row">
+  <td id="user_email"><%= user.email %></td>
+  <td id="user_role"><%= user.role %></td>
+  <td id="switch_role"><%= link_to "Make Admin", user_path(user.id), method: :put, confirm: "Are you sure?"  %></td>
+</tr>
+<% end %>
