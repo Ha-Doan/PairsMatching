@@ -1,0 +1,8 @@
+<%= form_for @match do |f| %>
+
+  <%= label :date %>
+  <%= date_select :date %>
+
+  <%= submit (@match.match_by_date(:date)) %>
+  <p><%= @your_match_was %></p>
+<% end %>

@@ -49,8 +49,9 @@ class User < ApplicationRecord
         return pair[0]
       end
     end
-  
+
   end
+  
 
   def matched_pairs
     @match
