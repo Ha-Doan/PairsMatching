@@ -1,0 +1,5 @@
+<%= form_for @match do |f| %>
+  <%= f.label :date, "the match on this date" %>
+  <%= f.date_select :date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }} %>
+  <%= f.label :pairing, "diplay the paring for date x" %>
+<% end %>

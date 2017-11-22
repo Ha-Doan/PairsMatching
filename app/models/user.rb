@@ -11,7 +11,6 @@ class User < ApplicationRecord
     @users = User.all
   end
 
-  #method to pair Users
   def pairs
     user_array = []
     users = User.all
@@ -49,13 +48,18 @@ class User < ApplicationRecord
         return pair[0]
       end
     end
-  
+
   end
 
   def matched_pairs
     @match
   end
 
+  def match_by_date(date)
+    your_match_for_date = Match.where(date: date)
+    @your_match_was = your_match_for_date.find_match
+
+  end
 
 
   private

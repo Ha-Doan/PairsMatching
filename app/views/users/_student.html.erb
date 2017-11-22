@@ -1,8 +1,29 @@
 <h3>Your match!</h3>
 <p>Date: <%=Date.today%><p>
+
 <% your_match = @user.find_match %>
 <p> You are <%= @user.email %>. You are  matched with <%= your_match %>.</p>
  <p> Matching pairs are: <br> </p>
  <% @user.matched_pairs.each do |pair| %>
 <p> <%= pair %><br></p>
- <%end%>
+ <% end %>
+
+<form>
+  <div>
+
+    <label for="match_date">Choose for which previous day you want to view your match</label>
+    <input type="date" id="match_date" name="match_date" min="2017-11-01" max="2017-11-30" required>
+    <span class="validity"></span>
+  </div>
+
+</form>
+
+<div>
+<% form_for @user do |f| %>
+  <%= f.date_select (date) %>
+
+  <% match = @user.match_by_date(date) %>
+  <%= f.submit (match) %>
+  <%= match %>
+<% end %>
+</div>
