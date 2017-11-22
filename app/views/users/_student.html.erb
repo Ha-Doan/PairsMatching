@@ -6,3 +6,11 @@
  <% @user.matched_pairs.each do |pair| %>
 <p> <%= pair %><br></p>
  <%end%>
+
+ <form id="pair_for_date_form">
+   <div>
+     <label for="match_date">Choose for which previous day you want to view your match</label>
+     <input type="date" id="match_date" name="match_date" min="2017-11-01" max="2017-11-30" required>
+     <span class="validity"></span>
+   </div>
+  </form>
