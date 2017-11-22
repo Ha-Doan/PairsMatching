@@ -5,7 +5,7 @@ before_action :set_user, only: [:show, :update]
   def index
     @user = current_user
     @users = User.all
-    
+
   end
 
   def show
@@ -26,6 +26,7 @@ before_action :set_user, only: [:show, :update]
     end
   end
 
+  
 
   private
   def user_params
