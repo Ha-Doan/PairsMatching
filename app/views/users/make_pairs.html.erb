@@ -1,0 +1,6 @@
+
+    <% matches = @user.get_all_created_matches %>
+    <h3> Pairs for upcomimg <%= matches.length %> days</h3>
+    <% matches.each do |match| %>
+       <p> Date: <%= match.date.to_date %> => Pairs: <%= match.pairs %></p>
+    <%end%>
