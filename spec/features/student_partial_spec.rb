@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "find matches", js: true do
-  let!(:user) { create :user, email: "current@user.com", password: "123456", role: "student" }
+feature "find matches" do
+  let!(:user) { create :user, role: "student" }
   let!(:another_user) { create :user, email: "another@user.com", role: "student" }
 
   before { login_as user }

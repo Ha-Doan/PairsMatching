@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  before_create :set_default_role
-  validates :role,    presence: true
+  #before_create :set_default_role
+
 
   def users
     @users = User.all
@@ -49,7 +49,7 @@ class User < ApplicationRecord
         return pair[0]
       end
     end
-  
+
   end
 
   def matched_pairs
