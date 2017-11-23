@@ -1,6 +1,10 @@
-<h3>Your match!</h3>
+<h3>You are matched!</h3>
 <p>Date: <%=Date.today%><p>
 <% your_match = @user.find_match %>
-<p> You are <%= @user.email %>. You are  matched with <%= your_match %>.</p>
- <p> My match for today : <br> </p>
- <p>Pair: <%= @user.my_match_a_day %> </p>
+<p> You are <%= @user.email %>. You are lastly matched with <%= your_match %>.</p>
+<hr>
+
+<% matches = @user.all_match %>
+<%matches.each do |match| %>
+<p>Date: <%= match.date.to_date %>:   Pairs: <%=match.pairs %><br>=> You are matched with <%= @user.get_match_for_date(match.date) %></p>
+<%end%>

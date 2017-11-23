@@ -7,3 +7,12 @@
 </tr>
 <% end %>
 <%end%>
+<hr>
+<%= button_to "Make pairs",  controller: "users", action: "make_pairs" %>
+<hr>
+<% @user.find_match %>
+<h3> Pairs for upcomimg five days</h3>
+<% matches = @user.get_all_created_matches %>
+<% matches.each do |match| %>
+   <p> Date: <%= match.date %> => Pairs: <%= match.pairs %></p>
+<%end%>
