@@ -16,12 +16,12 @@ feature 'manage roles', js: true do
    scenario 'change another_user to admin' do
 
      visit root_path
-     sleep(1)
+     sleep(0)
      find('tr', text: "another").click_link("make admin or student")
 
-     sleep(1)
+     sleep(0)
      page.driver.browser.switch_to.alert.accept
-     sleep(3)
+     sleep(0)
      expect(page).to have_content "User updated"
      expect(page).to have_content "admin"
    end
