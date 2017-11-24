@@ -24,7 +24,11 @@ before_action :set_user, only: [:show, :update]
       render :edit
     end
   end
-
+ def make_pairs
+   @user = current_user
+   @user.find_match
+   render :make_pairs
+ end
 
   private
   def user_params
