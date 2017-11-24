@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   #before_create :set_default_role
 
-  validates :role,    presence: true
 
   def get_students
     @users = User.all
@@ -92,6 +91,7 @@ class User < ApplicationRecord
    matches = Match.select {|match| match.date.to_date >= start_date.to_date && match.date.to_date <= end_date.to_date}
    matches
  end
+
 
   def get_matches_for_students
     start_date = Match.first.date
