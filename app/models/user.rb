@@ -34,7 +34,9 @@ class User < ApplicationRecord
           temp_array = @user_array[next_right..index_last]
           temp_array.push(left_element)
           temp_array2 = []
+          if before_left > 0
           temp_array2 = @user_array[1..before_left]
+          end
 
           array = []
           array = array.push(@user_array[0], right_element) + temp_array2 + temp_array
